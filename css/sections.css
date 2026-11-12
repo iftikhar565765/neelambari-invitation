@@ -62,7 +62,11 @@
 
 /* ═══ Ⅰ · THE JHAROKHA — names framed like a royal portrait ═════ */
 
-.scene--hero { padding-top: 0; padding-bottom: 0; }
+.scene--hero {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-inline: 0; /* the palace wall runs edge to edge */
+}
 
 .kstage {
   position: relative;
@@ -144,7 +148,7 @@
   margin-inline: auto;
 }
 
-.kcard__arch {
+.kcard__toran {
   position: absolute;
   top: 0;
   left: 0;
@@ -152,25 +156,44 @@
   height: auto;
   z-index: 1;
   pointer-events: none;
-  filter: drop-shadow(0 22px 38px rgba(4, 9, 20, .5));
+  filter: drop-shadow(0 14px 26px rgba(4, 9, 20, .42));
 }
 
-.karch-line { stroke: var(--champagne); stroke-width: 1.7; fill: none; }
-.karch-line--inner { stroke: var(--palace-gold-soft); stroke-width: .9; fill: none; }
-.karch-line--faint { stroke: var(--palace-gold-soft); stroke-width: .7; opacity: .65; fill: none; }
-.karch-finial path,
-.karch-finial circle { stroke: var(--champagne); stroke-width: 1.2; fill: none; }
+/* toran materials — every fill rides the theme variables, so the
+   garland follows whatever mood the editor pours over the palace  */
+.ktor-rope { stroke: var(--gold-line); stroke-width: 1.5; fill: none; }
+.ktor-rope--soft { stroke: var(--gold-faint); stroke-width: 1; }
+.ktor-bead { fill: var(--champagne-soft); }
+.ktor-bead--jewel { fill: var(--burgundy); opacity: .8; }
+.ktor-leaf { fill: color-mix(in srgb, var(--olive) 45%, var(--champagne) 55%); }
+.ktor-leaf--deep { fill: color-mix(in srgb, var(--olive-deep) 55%, var(--champagne-soft) 45%); }
+.ktor-vein { stroke: var(--gold-faint); stroke-width: .8; fill: none; }
+.ktor-mari--base { fill: var(--gold-dim); }
+.ktor-mari { fill: var(--gold-bright); }
+.ktor-mari--core { fill: var(--gilding); }
+.ktor-tassel { stroke: var(--gold-line); stroke-width: 1; fill: none; }
+.ktor-diamond { fill: var(--gold-bright); stroke: var(--gold-line); stroke-width: .6; }
+.ktor-bell { fill: var(--gold-bright); stroke: var(--gold-line); stroke-width: .7; }
+.ktor-bell-clap { fill: var(--gilding); }
+.ktor-jline { stroke: var(--gold-faint); stroke-width: 1.1; fill: none; }
+.ktor-jbud {
+  fill: color-mix(in srgb, var(--parchment) 64%, transparent);
+  stroke: var(--gold-faint);
+  stroke-width: .6;
+}
+.ktor-jbud-core { fill: var(--gold-bright); }
+.ktor-jewel { fill: var(--burgundy); }
 
-/* the dome — everything printed inside the arch head */
+/* the crown — everything under the toran */
 .kcard__crown {
   position: relative;
-  aspect-ratio: 660 / 430;
+  aspect-ratio: 660 / 380;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 6.8% 16% 0;
+  padding: 14% 16% 3%;
 }
 
 .kcard-ganesha { display: grid; justify-items: center; }
@@ -219,7 +242,7 @@
 }
 .kcard-rule i:last-child { transform: scaleX(-1); }
 .kcard-rule svg { width: 13px; height: 13px; fill: var(--champagne); }
-.kcard-rule--crown { margin-top: 3.4%; }
+.kcard-rule--crown { margin-top: auto; }
 
 /* the body — names and particulars between the pillars */
 .kcard__rect {
