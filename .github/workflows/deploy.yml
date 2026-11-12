@@ -1,0 +1,48 @@
+# Auto-deploy: every push to main builds the site and deploys it to
+# Cloudflare Workers — no local terminal needed.
+#
+# One-time setup (repo → Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN  — API token with the "Edit Cloudflare Workers"
+#                           permission (+ D1 Edit if migrations are run)
+#   CLOUDFLARE_ACCOUNT_ID — your Cloudflare account id
+#
+# Until both secrets exist the deploy step simply skips, so pushes
+# stay green. Add them and the next push deploys automatically.
+
+name: Deploy to Cloudflare
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Cloudflare Workers
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler deploy
