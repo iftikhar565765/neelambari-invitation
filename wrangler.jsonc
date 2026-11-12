@@ -15,7 +15,7 @@
       // One-time setup: create the D1 database, then paste its id here.
       //   npx wrangler d1 create kalyanam-invitations
       // (DEPLOY.md walks through this step by step.)
-      "database_id": "c0a52850-80c6-4294-a612-cff9c277b428"
+      "database_id": "256ed4c8-8387-4d2d-9989-d34b68919bc8"
     }
   ]
 }
