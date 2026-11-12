@@ -1,12 +1,10 @@
 /* ═══════════════════════════════════════════════════════════════
-   KALYANAM · base.css — the neelambari kalyanam
+   NEELAMBARI · base.css — foundations of the durbar
    ---------------------------------------------------------------
-   Royal lapis stationery: moonlit marble grounds, antique gold
-   hairlines, elegant serif headings with script accents, refined
-   letter-spaced labels and pill buttons with soft layered
-   shadows. Everything sits on a calm centred grid so the
-   ornamentation always reads gracious, never busy. All colours
-   are tokens overwritten at runtime by main.js applyTheme().
+   Engraved Italiana captions, generous Crimson prose, monumental
+   foil numerals, squared gold-edged "farman ticket" buttons and
+   the jaali lattice that repeats through the palace. Every colour
+   is a token overwritten at runtime by main.js applyTheme().
    ═══════════════════════════════════════════════════════════════ */
 
 *,
@@ -23,7 +21,7 @@ body {
   margin: 0;
   min-height: 100dvh;
   overflow-x: hidden;
-  background-color: var(--night);
+  background-color: var(--night-deep);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 17px;
@@ -48,7 +46,7 @@ a { color: inherit; }
 
 ::selection { background: color-mix(in srgb, var(--crimson) 32%, transparent); }
 
-/* ═══ THE SUITE — the whole invitation ══════════════════════════ */
+/* ═══ THE SUITE — the whole palace walk ═════════════════════════ */
 
 .sheet {
   position: relative;
@@ -70,11 +68,12 @@ a { color: inherit; }
   color: var(--champagne-soft);
 }
 
-/* the eyebrow — letter-spaced caps flanked by gold hairlines */
+/* the eyebrow — a chapter mark: letterspaced caps between two
+   gold hairlines, with a small diamond at each end */
 .kicker {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   font-family: var(--font-caps);
   font-weight: 400;
   text-transform: uppercase;
@@ -82,60 +81,64 @@ a { color: inherit; }
   font-size: var(--fs-eyebrow);
   color: var(--champagne-soft);
   padding-inline: 4px;
-  text-indent: .34em; /* optical balance for the tracking */
+  text-indent: .34em;
 }
 .kicker::before,
 .kicker::after {
   content: "";
-  width: 44px;
-  height: 1px;
+  width: 7px;
+  height: 7px;
   flex: none;
-  background: linear-gradient(90deg, transparent, var(--gold-line) 30%, var(--gold-line) 70%, transparent);
+  rotate: 45deg;
+  border: 1px solid var(--gold-line);
 }
 .kicker--center { margin-inline: auto; }
 .kicker--ink { color: var(--burgundy); }
 .kicker--ink::before,
-.kicker--ink::after {
-  background: linear-gradient(90deg, transparent, var(--line-strong) 30%, var(--line-strong) 70%, transparent);
-}
+.kicker--ink::after { border-color: var(--line-strong); }
 
+/* chapter display — engraved Italiana caps with a script echo */
 .display {
   font-family: var(--font-editorial);
   font-weight: 400;
-  font-size: clamp(2.3rem, 6vw, 3.6rem);
-  line-height: 1.12;
+  font-size: clamp(2.5rem, 6.4vw, 4rem);
+  line-height: 1.06;
   color: var(--ink);
-  letter-spacing: .01em;
+  letter-spacing: .045em;
+  text-transform: uppercase;
 }
 .display .script {
-  font-size: 1.06em;
+  font-size: 1.02em;
   font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
   color: var(--burgundy);
 }
 
 .prose {
   font-family: var(--font-display);
-  font-size: 1.09rem;
-  line-height: 1.82;
+  font-size: 1.1rem;
+  line-height: 1.85;
   color: var(--ink);
 }
 
 .prose--dropcap::first-letter {
   font-family: var(--font-editorial);
-  font-weight: 500;
-  font-size: 3.4em;
-  line-height: .72;
+  font-weight: 400;
+  font-size: 3.6em;
+  line-height: .74;
   float: left;
-  padding: .08em .16em 0 0;
+  padding: .06em .18em 0 0;
   color: var(--burgundy);
 }
 
 .hand {
   font-family: var(--font-hand);
-  font-size: 1.16rem;
+  font-size: 1.2rem;
   color: var(--ink-soft);
 }
 
+/* the gold-leaf numeral — for grand dates and moments */
 .foil {
   background: linear-gradient(172deg,
     color-mix(in srgb, var(--champagne) 58%, #F2DCA8) 10%,
@@ -149,7 +152,7 @@ a { color: inherit; }
 
 .small { font-size: .8rem; color: var(--charcoal); }
 
-/* ═══ BUTTONS — quiet luxury: pill, hairline, soft lift ═════════ */
+/* ═══ BUTTONS — farman tickets: squared, double-framed, gold ════ */
 
 .btn {
   position: relative;
@@ -157,13 +160,13 @@ a { color: inherit; }
   align-items: center;
   justify-content: center;
   gap: .6rem;
-  padding: .9rem 1.9rem;
-  border-radius: var(--radius-pill);
+  padding: .95rem 1.9rem;
+  border-radius: 2px;
   border: 1px solid var(--line);
   font-family: var(--font-ui);
-  font-size: .72rem;
+  font-size: .7rem;
   font-weight: 400;
-  letter-spacing: .22em;
+  letter-spacing: .24em;
   text-transform: uppercase;
   text-decoration: none;
   background: transparent;
@@ -172,9 +175,16 @@ a { color: inherit; }
     background-color .25s var(--ease-soft), color .25s var(--ease-soft),
     border-color .25s var(--ease-soft);
 }
-.btn:hover {
-  transform: translateY(-1px);
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid var(--gold-faint);
+  pointer-events: none;
+  transition: border-color .25s var(--ease-soft);
 }
+.btn:hover { transform: translateY(-1px); }
+.btn:hover::before { border-color: color-mix(in srgb, var(--champagne) 55%, transparent); }
 .btn:active { transform: translateY(0); }
 .btn .icon {
   width: 15px;
@@ -192,9 +202,10 @@ a { color: inherit; }
     color-mix(in srgb, var(--burgundy) 88%, white 12%) 0%,
     var(--burgundy) 44%,
     var(--burgundy-deep) 100%);
-  border-color: transparent;
+  border-color: color-mix(in srgb, var(--champagne) 45%, transparent);
 }
-.btn--rani:hover { filter: brightness(1.06); }
+.btn--rani::before { border-color: color-mix(in srgb, var(--champagne) 38%, transparent); }
+.btn--rani:hover { filter: brightness(1.07); }
 
 .btn--marigold {
   color: var(--night);
@@ -204,13 +215,15 @@ a { color: inherit; }
     var(--champagne-soft) 100%);
   border-color: transparent;
 }
-.btn--marigold:hover { filter: brightness(1.04); }
+.btn--marigold::before { border-color: rgba(255, 250, 232, .5); }
+.btn--marigold:hover { filter: brightness(1.05); }
 
 .btn--ghost {
   color: inherit;
-  border-color: color-mix(in srgb, currentColor 42%, transparent);
+  border-color: color-mix(in srgb, currentColor 38%, transparent);
   background: transparent;
 }
+.btn--ghost::before { border-color: transparent; }
 .btn--ghost:hover { border-color: currentColor; }
 .btn--ghost.btn--ink { color: var(--ink); }
 
@@ -227,12 +240,31 @@ a { color: inherit; }
 .arch-halo { fill: none; stroke: var(--gold-faint); stroke-width: 1.2; }
 .emblem-arc { stroke: var(--gold-line); fill: none; stroke-width: 1; }
 
-/* the quiet gold divider between scenes */
-.stripe-band {
+/* ═══ THE JAALI — lattice-light language of the palace ══════════
+   A repeating eight-point star; gold on the night scenes, sapphire
+   ghost on the marble scenes. Used as a background wash and as the
+   divider band between chapters.                                  */
+
+.jaali-light {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='76'%3E%3Cg fill='none' stroke='%23C9A260' stroke-opacity='.09'%3E%3Cpath d='M38 5 L55 21 L71 38 L55 55 L38 71 L21 55 L5 38 L21 21 Z'/%3E%3Cpath d='M38 16 L49 27 L60 38 L49 49 L38 60 L27 49 L16 38 L27 27 Z'/%3E%3Ccircle cx='38' cy='38' r='2.4'/%3E%3C/g%3E%3C/svg%3E");
+}
+.jaali-ink {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='76'%3E%3Cg fill='none' stroke='%231E56A0' stroke-opacity='.07'%3E%3Cpath d='M38 5 L55 21 L71 38 L55 55 L38 71 L21 55 L5 38 L21 21 Z'/%3E%3Cpath d='M38 16 L49 27 L60 38 L49 49 L38 60 L27 49 L16 38 L27 27 Z'/%3E%3Ccircle cx='38' cy='38' r='2.4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* the divider between chapters — a cusped arcade strip */
+.jaali-band {
+  position: relative;
   display: block;
-  height: 1px;
-  border: 0;
-  background: linear-gradient(90deg, transparent, var(--gold-line) 18%, var(--gold-line) 82%, transparent);
+  height: 26px;
+  margin: 0 auto;
+  max-width: 320px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='26'%3E%3Cg fill='none' stroke='%23C9A260' stroke-opacity='.55'%3E%3Cpath d='M2 26 V13 A10.5 10.5 0 0 1 12.5 3 A10.5 10.5 0 0 1 23 13 V26'/%3E%3Cpath d='M6.5 26 V14 A6.2 6.2 0 0 1 12.5 8 A6.2 6.2 0 0 1 18.5 14 V26'/%3E%3Cpath d='M25 26 V13 A10.5 10.5 0 0 1 35.5 3 A10.5 10.5 0 0 1 46 13'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
+  pointer-events: none;
 }
 
 /* ═══ FLOATING AUDIO — the only piece of "chrome" allowed ═══════ */
@@ -271,7 +303,7 @@ a { color: inherit; }
 .reveal.in-view { opacity: 1; transform: none; }
 .no-js .reveal { opacity: 1; transform: none; }
 
-/* while the envelope is sealed the suite waits behind the cover */
+/* while the farman is sealed the palace waits behind the gate */
 body.intro-pending { overflow: hidden; height: 100dvh; }
 body.intro-pending #main-content { opacity: 0; pointer-events: none; }
 

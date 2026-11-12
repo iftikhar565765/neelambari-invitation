@@ -193,10 +193,10 @@ window.HEIRLOOM = {
   theme: "neelambari",
   themeColors: {},
   fonts: {
-    editorial: "cormorant",
-    display: "ebGaramond",
-    script: "pinyon",
-    hand: "laBelle",
+    editorial: "italiana",
+    display: "crimsonPro",
+    script: "parisienne",
+    hand: "caveat",
     body: "jost"
   },
 

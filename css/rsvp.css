@@ -1,14 +1,15 @@
 /* ═══════════════════════════════════════════════════════════════
-   KALYANAM · rsvp.css — the reply-card form
-   Fine gold hairlines, ice-blue fields, pill choices — a reply card
-   written with a fountain pen, not a stamp block.
+   NEELAMBARI · rsvp.css — the reply-desk form
+   Inputs written like fountain-pen entries on a reply card:
+   hairline underlines instead of boxes, squared choices with a
+   diamond nib, gold focus.
    ═══════════════════════════════════════════════════════════════ */
 
 .rsvp-form {
   margin-top: 30px;
   text-align: left;
   display: grid;
-  gap: 22px;
+  gap: 24px;
 }
 
 .field > label,
@@ -18,7 +19,7 @@
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: .2em;
-  font-size: .64rem;
+  font-size: .62rem;
   color: var(--ink-soft);
   margin-bottom: 9px;
 }
@@ -28,22 +29,28 @@
 .field textarea {
   width: 100%;
   font-family: var(--font-display);
-  font-size: 1.04rem;
+  font-size: 1.06rem;
   color: var(--ink);
-  background: var(--ivory);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-card);
-  padding: .8em 1em;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--paper-line);
+  border-radius: 0;
+  padding: .55em .2em;
   transition: border-color .25s var(--ease-soft), box-shadow .25s var(--ease-soft);
   appearance: none;
 }
-.field textarea { resize: vertical; min-height: 64px; }
+.field textarea { resize: vertical; min-height: 60px; }
 
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--champagne) 18%, transparent);
+  border-bottom-color: var(--gold);
+  box-shadow: 0 1px 0 0 color-mix(in srgb, var(--champagne) 45%, transparent);
+}
+
+.field.is-invalid input,
+.field.is-invalid textarea {
+  border-bottom-color: var(--burgundy);
 }
 
 .field-error {
@@ -56,7 +63,7 @@
 
 .field--split input[type="number"] { max-width: 160px; }
 
-/* ── the two choices — soft pills with a fine ring ────────────── */
+/* ── the two choices — squared plaques with a diamond nib ─────── */
 
 .choices {
   display: flex;
@@ -69,10 +76,10 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: .72em 1.25em;
-  background: var(--ivory);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-pill);
+  padding: .78em 1.3em;
+  background: transparent;
+  border: 1px solid var(--paper-line);
+  border-radius: 2px;
   font-family: var(--font-display);
   font-size: 1rem;
   letter-spacing: .01em;
@@ -93,8 +100,8 @@
 }
 
 .choice .diamond {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   flex: none;
   transform: rotate(45deg);
   border: 1px solid var(--champagne-soft);
@@ -103,7 +110,7 @@
 }
 
 .choice:has(input:checked) {
-  background: color-mix(in srgb, var(--rose) 26%, var(--paper-raised));
+  background: color-mix(in srgb, var(--rose) 22%, transparent);
   border-color: var(--gold);
 }
 .choice:has(input:checked) .diamond {
@@ -137,6 +144,7 @@
 .rsvp-note strong { color: var(--ink); font-weight: 500; }
 
 .rsvp-status { font-family: var(--font-ui); font-size: .82rem; color: var(--olive-deep); }
+.rsvp-status.is-error { color: var(--burgundy); }
 
 .rsvp-honeypot {
   position: absolute;
@@ -151,7 +159,7 @@
 .rsvp-preview { text-align: center; }
 .script-intro {
   font-family: var(--font-script);
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   color: var(--burgundy);
 }
 
@@ -161,7 +169,6 @@
   margin: 22px 0;
   text-align: left;
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius-card);
   overflow: hidden;
 }
 .rsvp-summary > div {

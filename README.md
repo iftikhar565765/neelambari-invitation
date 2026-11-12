@@ -1,21 +1,20 @@
 # Neelambari — a royal lapis & gold Indian wedding invitation
 
-*Neelambari* — "woven of blue" — is an elegant Indian wedding card
-reimagined as **royal lapis stationery**: moonlit-marble grounds and
-deep lapis night bands trimmed in antique gold hairlines, a wax-sealed
-silk envelope that opens into the invitation, and the same gracious
-centred grid throughout — the shloka, "With the divine blessings of
-our families", the names in Pinyon Script, an ornamental date row with
-foil numerals, the muhurat, the venue and "Your presence will make
-our day complete". Below: their story as a centred letter, the
-save-the-date plate, the six celebrations as a printed itinerary, the
-palette, the garland of festivities, the kalyana mandapam, the
-countdown beneath the mandala, the reply card, and a closing note
-sealed with the couple's monogram. No site chrome — it reads as the
-card itself. Elegant serif headings with script accents and
-letter-spaced labels. Fully customisable in the browser with a
-guided, auto-saving visual editor — then published live with one
-click on Cloudflare.
+*Neelambari* — "woven of blue" — is an Indian wedding invitation
+reimagined as **a Mughal palace at midnight**. The guest enters
+through a lapis-silk farman envelope sealed in gold — its flap lined
+with woven jaali — and walks the durbar: the names blazing in gold
+script inside a grand cusped jharokha arch, the story set like a
+gallery plaque with a giant chapter numeral, the date proclaimed on a
+candlelit farman band, the celebrations strung along a sacred gold
+thread, the palette presented as silk swatches, the festivities
+hanging from a marigold garland, the mandapam in its courtyard, a
+rotunda countdown beneath a turning moon-mandala, a fountain-pen reply
+desk and a petal-shower farewell. Alternating lapis nights and moonlit
+marble, joined by cusped jaali arcade bands; set in Italiana, Crimson
+Pro, Parisienne and Jost. No site chrome — it is the palace itself.
+Fully customisable in the browser with a guided, auto-saving visual
+editor — then published live with one click on Cloudflare.
 
 **Live template pieces**
 

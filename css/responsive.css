@@ -1,26 +1,43 @@
 /* ═══════════════════════════════════════════════════════════════
-   KALYANAM · responsive.css — the neelambari suite at every size
+   NEELAMBARI · responsive.css — the durbar at every size
    ═══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 760px) {
 
-  /* the card's corners hug the smaller die-cut */
-  .korn--cascade-tl { left: -5%; width: 32%; }
-  .korn--cascade-tr { right: -5%; width: 32%; }
-  .korn--spray-tl { left: -7%; width: 23%; }
-  .korn--spray-tr { right: -7%; width: 23%; }
-  .korn--bell-tl { left: 15%; width: 14%; }
-  .korn--bell-tr { right: 15%; width: 14%; }
-  .korn--jasmine-l { left: 20%; width: 15%; }
-  .korn--jasmine-r { right: 20%; width: 15%; }
-  .korn--pavilion { left: -8%; width: 34%; }
-  .korn--drape { right: -6.5%; width: 25%; }
-  .korn--lotus-bl { width: 30%; }
-  .korn--lotus-br { width: 22%; }
-  .korn--spray-bl { width: 17%; left: -4.5%; }
-  .korn--spray-br { width: 17%; right: -4.5%; }
-  .korn--lamp-bl { width: 12%; }
-  .korn--lamp-br { width: 12%; }
+  /* the jharokha corners hug the smaller frame */
+  .korn--spray-tl { left: -9%; width: 26%; }
+  .korn--spray-tr { right: -9%; width: 26%; }
+  .korn--cascade-tl { left: -16%; width: 36%; }
+  .korn--cascade-tr { right: -16%; width: 36%; }
+  .korn--bell-tl { left: 13%; width: 14%; }
+  .korn--bell-tr { right: 13%; width: 14%; }
+  .korn--jasmine-l { left: -9%; width: 23%; bottom: 13%; }
+  .korn--jasmine-r { right: -9%; width: 23%; bottom: 13%; }
+  .korn--pavilion { left: -16%; width: 34%; }
+  .korn--drape { right: -14%; width: 27%; }
+  .korn--lotus-bl { width: 19%; left: 5%; }
+  .korn--lotus-br { width: 16%; right: 7%; }
+  .korn--spray-bl { width: 21%; left: -5%; }
+  .korn--spray-br { width: 21%; right: -5%; }
+  .korn--lamp-bl { width: 10%; left: 14%; }
+  .korn--lamp-br { width: 10%; right: 15%; }
+  .korn--leaf-bl { width: 24%; left: -2%; }
+  .korn--leaf-br { width: 24%; right: -2%; }
+
+  /* the thread moves to the left margin */
+  .programme::before { left: 27px; }
+  .programme-item { grid-template-columns: 56px 1fr; }
+  .programme-niche { grid-column: 1; width: 46px; height: 46px; justify-self: start; }
+  .programme-item:nth-child(odd) .programme-text,
+  .programme-item:nth-child(even) .programme-text {
+    grid-column: 2;
+    justify-items: start;
+    text-align: left;
+    padding: 0 0 0 16px;
+  }
+  .programme-item:nth-child(odd) .programme-foot i:first-child,
+  .programme-item:nth-child(even) .programme-foot i:last-child { display: block; }
+  .programme-note { max-width: none; }
 
   .particulars-row { grid-template-columns: 1fr; }
   .particular:nth-child(odd) { border-right: 0; }
@@ -29,13 +46,19 @@
   .std-actions { flex-direction: column; align-items: center; }
   .std-actions .btn { width: min(280px, 100%); justify-content: center; }
 
-  .count-unit { width: 92px; padding: 15px 6px 12px; }
-  .count-num { font-size: 2.1rem; }
+  .story-quote { margin-left: 0; }
 
-  .day-words { gap: 24px 26px; }
+  .count-unit { width: 74px; padding: 13px 4px 11px; }
+  .count-num { font-size: 1.8rem; }
+
+  .day-words { gap: 26px 18px; }
+  .day-word { width: 96px; }
+
+  .venue-curtain { width: 17%; top: -3%; }
 
   .opening__florals--tl,
-  .opening__florals--tr { width: clamp(8rem, 26vw, 12rem); }
+  .opening__florals--tr { width: clamp(7.5rem, 24vw, 11rem); }
+  .opening__watermark { font-size: 6.8rem; }
 }
 
 @media (max-width: 430px) {
@@ -45,46 +68,47 @@
   .kstage { padding-inline: 10px; }
   .kstage__frame { inset: 6px; }
   .kstage__frame::before,
-  .kstage__frame::after { width: 14px; height: 14px; }
+  .kstage__frame::after { width: 8px; height: 8px; }
 
-  .korn--cascade-tl { left: -4%; width: 36%; top: -1.8%; }
-  .korn--cascade-tr { right: -4%; width: 36%; top: -1.8%; }
-  .korn--bell-tl { left: 12%; }
-  .korn--bell-tr { right: 12%; }
-  .korn--pavilion { left: -9%; width: 38%; top: 31%; }
-  .korn--drape { right: -7%; width: 28%; top: 27%; }
-  .korn--lotus-bl { left: -5%; width: 33%; }
-  .korn--lotus-br { right: -2%; width: 24%; }
-  .korn--lamp-bl { left: 7%; width: 13%; }
-  .korn--lamp-br { right: 8%; width: 13%; }
+  .korn--spray-tl { top: -2.4%; left: -10%; width: 30%; }
+  .korn--spray-tr { top: -2.4%; right: -10%; width: 30%; }
+  .korn--cascade-tl { top: 11%; left: -20%; width: 42%; }
+  .korn--cascade-tr { top: 11%; right: -20%; width: 42%; }
+  .korn--bell-tl { left: 10%; }
+  .korn--bell-tr { right: 10%; }
+  .korn--pavilion { left: -19%; width: 40%; top: auto; }
+  .korn--drape { right: -17%; width: 31%; }
+  .korn--lotus-bl { left: -3%; width: 23%; }
+  .korn--lotus-br { right: -1%; width: 19%; }
+  .korn--lamp-bl { left: 6%; width: 11.5%; }
+  .korn--lamp-br { right: 7%; width: 11.5%; }
+  .korn--spray-bl { left: -7%; width: 25%; }
+  .korn--spray-br { right: -7%; width: 25%; }
+  .korn--leaf-bl { width: 28%; }
+  .korn--leaf-br { width: 28%; }
 
-  .kcard__crown { padding: 9% 12% 0; }
-  .kcard__rect { padding-bottom: 10%; }
+  .kcard__crown { padding: 8% 13% 0; }
+  .kcard__rect { padding-inline: 14px; }
 
-  .hero-scroll__block { font-size: .54rem; }
+  .hero-scroll__block { font-size: .52rem; }
 
-  .programme { gap: 30px; }
-  .programme-item { padding: 0 18px 20px; }
-  .programme-index { top: -18px; width: 36px; height: 36px; }
-  .programme-value { letter-spacing: .16em; }
+  .chapter-num { font-size: 5.6rem; top: -0.8em; }
 
-  .dresscode-lotus { width: 60px; top: -26px; left: -14px; }
+  .closing-bloom { width: 96px; top: -4%; }
+  .closing-bloom--l { left: -5%; }
+  .closing-bloom--r { right: -5%; }
 
-  .venue-stage { width: 92%; }
-  .venue-diya { right: -5%; width: 30%; }
+  .venue-stage { width: 94%; }
+  .venue-diya { right: -6%; width: 32%; }
 
-  .count-clock { gap: 12px; }
-  .count-unit { width: 74px; }
-  .count-num { font-size: 1.7rem; }
-
-  .day-words { column-gap: 22px; }
-
-  .closing-bloom { width: 116px; }
+  .count-clock { gap: 10px; }
+  .count-unit { width: 70px; }
+  .count-num { font-size: 1.6rem; }
 
   .opening__eyebrow { font-size: .6rem; }
-  .opening__florals--tl { width: 8rem; top: -2rem; left: -1.8rem; }
-  .opening__florals--tr { width: 8rem; top: -2rem; right: -1.8rem; }
+  .opening__florals--tl { width: 7.5rem; top: -1.8rem; left: -1.7rem; }
+  .opening__florals--tr { width: 7.5rem; top: -1.8rem; right: -1.7rem; }
   .opening__florals--bl,
-  .opening__florals--br { width: 7.5rem; }
-  .opening__watermark { font-size: 11rem; }
+  .opening__florals--br { width: 7rem; }
+  .opening__toran { width: 130vw; }
 }
