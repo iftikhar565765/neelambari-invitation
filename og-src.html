@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=EB+Garamond:ital@0;1&family=Pinyon+Script&family=Space+Grotesk:wght@500;700&family=Tiro+Devanagari+Hindi&family=Anton&display=swap" rel="stylesheet">
+<style>
+body { margin:0; width:1200px; height:630px; overflow:hidden; background:#2A1015; }
+.cover { width:1200px; height:630px; position:relative; display:flex; align-items:center; justify-content:center;
+  background:
+    radial-gradient(120% 100% at 50% -10%, #4A1B26 0%, rgba(74,27,38,0) 58%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cg fill='none' stroke='%23F6C55C' stroke-opacity='.10'%3E%3Cpath d='M24 2 L46 24 L24 46 L2 24 Z'/%3E%3Cpath d='M24 12 L36 24 L24 36 L12 24 Z'/%3E%3C/g%3E%3C/svg%3E"),
+    #2A1015; }
+.band { position:absolute; left:0; right:0; height:16px;
+  border-block:3px solid #1E090E;
+  background:repeating-linear-gradient(-45deg,#B5123F 0 30px,#E8A020 30px 60px,#FFF9EC 60px 72px,#1C6B4E 72px 100px,#E8A020 100px 114px); }
+.band--t { top:0; } .band--b { bottom:0; }
+.ticker { position:absolute; left:0; right:0; text-align:center; font-family:'Space Grotesk',sans-serif; font-weight:700;
+  letter-spacing:.4em; text-transform:uppercase; font-size:12px; }
+.ticker--t { top:26px; color:#F6C55C; }
+.ticker--b { bottom:26px; color:rgba(247,237,218,.75); }
+.card { position:relative; width:452px; height:538px; margin-top:26px;
+  box-shadow:14px 16px 0 rgba(0,0,0,.5); }
+.card__arch { position:absolute; inset:0; width:100%; height:100%; }
+.bloom { position:absolute; top:-16px; width:118px; }
+.bloom--l { left:-26px; }
+.bloom--r { right:-26px; transform:scaleX(-1); }
+.bell { position:absolute; top:6px; width:44px; }
+.bell--l { left:64px; }
+.bell--r { right:64px; transform:scaleX(-1); }
+.spray { position:absolute; top:52px; width:64px; }
+.spray--l { left:-18px; transform:rotate(-24deg); }
+.spray--r { right:-18px; transform:scaleX(-1) rotate(-24deg); }
+.drape { position:absolute; right:-24px; top:180px; width:96px; }
+.pav { position:absolute; left:-26px; top:224px; width:118px; }
+.lotus { position:absolute; bottom:-16px; left:-22px; width:100px; }
+.lotus2 { position:absolute; bottom:-12px; right:48px; width:58px; }
+.lamp { position:absolute; bottom:-10px; right:-14px; width:40px; }
+.inner { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; text-align:center;
+  padding:34px 46px 0; }
+.ganesha { width:58px; filter: drop-shadow(0 6px 14px rgba(143,107,44,.4)); }
+.shloka { font-family:'Tiro Devanagari Hindi',serif; font-size:14px; color:#B6893C; letter-spacing:.08em; margin-top:5px; }
+.eyebrow { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:10.5px; letter-spacing:.24em; text-transform:uppercase; color:#B6893C; margin-top:9px; max-width:38ch; line-height:1.9; }
+.names { font-family:'Pinyon Script',cursive; font-size:52px; line-height:1.1; margin-top:8px; color:#7D2B3A; }
+.and { font-family:'EB Garamond',serif; font-style:italic; font-size:19px; color:#6E5138; margin:0; }
+.and::before { content:"— "; } .and::after { content:" —"; }
+.daterow { display:flex; align-items:center; gap:11px; margin-top:8px; }
+.dweek { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:10px; letter-spacing:.34em; text-transform:uppercase; color:#B6893C; margin-top:7px; }
+.dside { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; letter-spacing:.22em; text-transform:uppercase; color:#4E3524; }
+.dnum { font-family:'EB Garamond',serif; font-weight:600; font-size:46px; line-height:1; color:#7D2B3A; }
+.orn { width:17px; color:#B6893C; }
+.venue { font-family:'EB Garamond',serif; font-weight:700; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#7D2B3A; margin-top:12px; line-height:1.75; max-width:36ch; }
+.closing-line { font-family:'Pinyon Script',cursive; font-size:20px; color:#C25E7C; margin-top:10px; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="band band--t"></div>
+  <div class="band band--b"></div>
+  <div class="ticker ticker--t">॥ शुभ विवाह ॥ · Arjun ❤ Meghana · 22 · 05 · 2027</div>
+  <div class="card">
+    <svg class="card__arch" viewBox="0 0 660 830" preserveAspectRatio="none">
+      <path fill="#FBF3E8" d="M38 830 L38 308 A 38.8 38.8 0 0 1 46.5 243.9 A 39.2 39.2 0 0 1 71.4 183.5 A 39.9 39.9 0 0 1 111.4 130.3 A 40.7 40.7 0 0 1 164.1 87.4 A 41.5 41.5 0 0 1 226.5 57.4 A 42 42 0 0 1 294.8 42 A 42.2 42.2 0 0 1 365.2 42 A 42 42 0 0 1 433.5 57.4 A 41.5 41.5 0 0 1 495.9 87.4 A 40.7 40.7 0 0 1 548.6 130.3 A 39.9 39.9 0 0 1 588.6 183.5 A 39.2 39.2 0 0 1 613.5 243.9 A 38.8 38.8 0 0 1 622 308 L 622 830 Z"/>
+      <path fill="none" stroke="#B6893C" stroke-width="2.2" d="M38 830 L38 308 A 38.8 38.8 0 0 1 46.5 243.9 A 39.2 39.2 0 0 1 71.4 183.5 A 39.9 39.9 0 0 1 111.4 130.3 A 40.7 40.7 0 0 1 164.1 87.4 A 41.5 41.5 0 0 1 226.5 57.4 A 42 42 0 0 1 294.8 42 A 42.2 42.2 0 0 1 365.2 42 A 42 42 0 0 1 433.5 57.4 A 41.5 41.5 0 0 1 495.9 87.4 A 40.7 40.7 0 0 1 548.6 130.3 A 39.9 39.9 0 0 1 588.6 183.5 A 39.2 39.2 0 0 1 613.5 243.9 A 38.8 38.8 0 0 1 622 308 L 622 830"/>
+      <path fill="none" stroke="#CDA96A" stroke-width="1.1" d="M62 830 L62 308 A 35.3 35.3 0 0 1 69.8 249.6 A 35.7 35.7 0 0 1 92.7 194.6 A 36.4 36.4 0 0 1 129.4 146.2 A 37.3 37.3 0 0 1 177.8 107.2 A 38 38 0 0 1 235 79.9 A 38.6 38.6 0 0 1 297.7 65.8 A 38.8 38.8 0 0 1 362.3 65.8 A 38.6 38.6 0 0 1 425 79.9 A 38 38 0 0 1 482.2 107.2 A 37.3 37.3 0 0 1 530.6 146.2 A 36.4 36.4 0 0 1 567.3 194.6 A 35.7 35.7 0 0 1 590.2 249.6 A 35.3 35.3 0 0 1 598 308 L 598 830"/>
+      <path d="M330 6 L336 15 L330 24 L324 15 Z" fill="none" stroke="#B6893C" stroke-width="1.6"/>
+    </svg>
+    <img class="bloom bloom--l" src="assets/art/blossom-cascade.png" alt="">
+    <img class="bloom bloom--r" src="assets/art/blossom-cascade.png" alt="">
+    <img class="bell bell--l" src="assets/art/temple-bell.png" alt="">
+    <img class="bell bell--r" src="assets/art/temple-bell.png" alt="">
+    <img class="spray spray--l" src="assets/art/marigold-spray.png" alt="">
+    <img class="spray spray--r" src="assets/art/marigold-spray.png" alt="">
+    <img class="drape" src="assets/art/silk-drape.png" alt="">
+    <img class="pav" src="assets/art/mandap.png" alt="">
+    <img class="lotus" src="assets/art/lotus-cluster.png" alt="">
+    <img class="lotus2" src="assets/art/lotus.png" alt="">
+    <img class="lamp" src="assets/art/brass-diya.png" alt="">
+    <div class="inner">
+      <img class="ganesha" src="assets/art/ganesha-gold.png" alt="">
+      <div class="shloka">॥ श्री गणेशाय नमः ॥</div>
+      <div class="eyebrow">With the divine blessings of our families — we cordially invite you to celebrate the wedding of</div>
+      <div class="names">Arjun</div>
+      <div class="and">and</div>
+      <div class="names" style="margin-top:0">Meghana</div>
+      <div class="dweek">Saturday</div>
+      <div class="daterow">
+        <span class="dside">May</span>
+        <svg class="orn" viewBox="0 0 34 44"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4 L 22 12 L 17 20 L 12 12 Z"/><path stroke-width="1.1" d="M17 20 V 34"/><circle cx="17" cy="38.5" r="1.5" fill="currentColor" stroke="none"/></g></svg>
+        <span class="dnum">22</span>
+        <svg class="orn" viewBox="0 0 34 44" style="transform:scaleX(-1)"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4 L 22 12 L 17 20 L 12 12 Z"/><path stroke-width="1.1" d="M17 20 V 34"/><circle cx="17" cy="38.5" r="1.5" fill="currentColor" stroke="none"/></g></svg>
+        <span class="dside">2027</span>
+      </div>
+      <div class="venue">Sri Lakshmi Venkateshwara Kalyana Mandapam · Bengaluru</div>
+      <div class="closing-line">Your presence will make our day complete</div>
+    </div>
+  </div>
+  <div class="ticker ticker--b">Muhurat 11:24 AM · Rajajinagar, Bengaluru</div>
+</div>
+</body></html>

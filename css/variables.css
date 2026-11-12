@@ -1,0 +1,131 @@
+/* ═══════════════════════════════════════════════════════════════
+   KALYANAM · variables.css — the neelambari kalyanam
+   ---------------------------------------------------------------
+   A royal lapis-and-gold Indian wedding suite: neelambari —
+   the blue of the ceremonial silk — poured over the whole
+   celebration like moonlight on a palace lake. Deep lapis
+   nights, marble-ivory papers, antique gold hairlines, a
+   powder-blue silk envelope, and the jewel accents of the
+   Pichwai palette: lotus pink, peacock teal, marigold. Every token here is
+   overwritten at runtime by main.js applyTheme() from the
+   editor's palettes, so the moods (neelambari, blush, marigold, rani,
+   peacock, sindoor) recolour the whole suite. Defaults mirror
+   the neelambari preset.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── the kalyana palette (neelambari mood — lapis & gold) ────────── */
+  --burgundy:      #1E56A0;   /* royal sapphire — primary accent  */
+  --burgundy-deep: #133E77;   /* compressed lapis                 */
+  --wine:          #0E2547;   /* midnight indigo — strong ink     */
+  --crimson:       #6E96CE;   /* lotus-dusk blue — blossom accent */
+  --champagne:     #C9A260;   /* antique gold                     */
+  --champagne-soft:#AD8445;   /* burnished gold                   */
+  --parchment:     #EAF0F8;   /* ice-blue light wash              */
+  --ivory:         #F2F6FB;   /* moonlit marble page ground       */
+  --paper-raised:  #FAFCFF;   /* raised card paper                */
+  --night:         #0D1F3C;   /* lapis night (dark bands)         */
+  --night-deep:    #081426;
+  --olive:         #3D6B8C;   /* peacock teal ink                 */
+  --olive-deep:    #274E68;
+  --sage:          #A6BFD8;
+  --rose:          #BCD3EA;   /* neelambari powder-blue silk      */
+  --ink:           #1C2E44;   /* deep indigo ink                  */
+  --ink-soft:      #4A607C;
+  --charcoal:      #7E92AC;
+
+  /* ── derived golds ────────────────────────────────────────── */
+  --gold:          var(--champagne);
+  --gold-bright:   color-mix(in srgb, var(--champagne) 68%, #F2DCA8);
+  --gold-dim:      color-mix(in srgb, var(--champagne) 58%, var(--ink) 14%);
+  --gold-line:     color-mix(in srgb, var(--champagne) 52%, transparent);
+  --gold-faint:    color-mix(in srgb, var(--champagne) 26%, transparent);
+  --gold-ghost:    color-mix(in srgb, var(--champagne) 13%, transparent);
+
+  /* ── paper tones ──────────────────────────────────────────── */
+  --paper-line:    color-mix(in srgb, var(--champagne-soft) 50%, transparent);
+  --paper-wash:    color-mix(in srgb, var(--burgundy) 3%, var(--paper-raised));
+  --cream-deep:    color-mix(in srgb, var(--parchment) 62%, var(--ivory) 38%);
+
+  /* ── the night's own derived tones — candlelit lapis ───────── */
+  --sky-1:         var(--night-deep);
+  --sky-2:         color-mix(in srgb, var(--night) 84%, var(--burgundy) 16%);
+  --glass:         color-mix(in srgb, var(--night) 55%, transparent);
+  --glass-deep:    color-mix(in srgb, var(--night-deep) 72%, transparent);
+  --glass-edge:    color-mix(in srgb, var(--champagne) 26%, transparent);
+  --gilding:       color-mix(in srgb, var(--champagne) 86%, white 14%);
+  --gilding-soft:  color-mix(in srgb, var(--champagne) 55%, transparent);
+  --moonlit:       color-mix(in srgb, var(--parchment) 88%, var(--champagne) 12%);
+  --moonlit-soft:  color-mix(in srgb, var(--parchment) 58%, transparent);
+  --night-ink:     color-mix(in srgb, var(--parchment) 66%, transparent);
+  --night-faint:   color-mix(in srgb, var(--parchment) 48%, transparent);
+  --candle:        color-mix(in srgb, var(--champagne) 40%, #F2DCA8 60%);
+
+  /* ── luxury hardware — hairlines and soft shadow layers ───── */
+  --line:          color-mix(in srgb, var(--champagne) 44%, transparent);
+  --line-strong:   color-mix(in srgb, var(--champagne-soft) 72%, transparent);
+  --shadow-soft:   0 14px 40px -18px color-mix(in srgb, var(--night) 55%, transparent),
+                   0 4px 14px -8px color-mix(in srgb, var(--night) 30%, transparent);
+  --shadow-lift:   0 26px 60px -26px color-mix(in srgb, var(--night) 62%, transparent),
+                   0 8px 22px -12px color-mix(in srgb, var(--night) 38%, transparent);
+  --shadow-card:   var(--shadow-lift);
+  --shadow-gold:   0 1px 0 rgba(255, 248, 224, .6) inset;
+
+  /* ── type ───────────────────────────────────────────────────
+     Cormorant Garamond for display headings · EB Garamond for
+     the printed word · Pinyon Script for names · La Belle
+     Aurore for handwritten notes · Jost for labels.            */
+  --font-editorial: 'Cormorant Garamond', 'Cormorant', 'Times New Roman', serif;
+  --font-display:   'EB Garamond', 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --font-script:    'Pinyon Script', 'Snell Roundhand', 'Apple Chancery', cursive;
+  --font-hand:      'La Belle Aurore', 'Bradley Hand', 'Segoe Script', cursive;
+  --font-body:      'Jost', 'Century Gothic', 'Futura', 'Helvetica Neue', Arial, sans-serif;
+  --font-ui:        'Jost', 'Century Gothic', 'Futura', 'Helvetica Neue', Arial, sans-serif;
+  --font-deva:      'Tiro Devanagari Hindi', serif;
+  --font-caps:      'Jost', 'Century Gothic', 'Helvetica Neue', sans-serif;
+
+  /* fluid scale */
+  --fs-eyebrow:   clamp(.6rem, 1.6vw, .7rem);
+  --fs-small:     clamp(.74rem, 1.8vw, .84rem);
+  --fs-body:      clamp(1.02rem, 2.2vw, 1.1rem);
+  --fs-lead:      clamp(1.12rem, 2.5vw, 1.24rem);
+  --fs-h2:        clamp(2rem, 6.2vw, 3.3rem);
+  --fs-h1:        clamp(2.6rem, 9.5vw, 5.2rem);
+  --fs-script:    clamp(2.4rem, 9vw, 5.4rem);
+
+  /* ── rhythm ───────────────────────────────────────────────── */
+  --container:     860px;
+  --gutter:        clamp(20px, 4.5vw, 48px);
+  --space-scene:   clamp(76px, 11vh, 132px);
+  --pad-gutter:    clamp(22px, 5vw, 44px);
+
+  --radius-card:   2px;
+  --radius-pill:   999px;
+
+  --ease-out:      cubic-bezier(.22, .61, .36, 1);
+  --ease-soft:     cubic-bezier(.22, .61, .21, 1);
+
+  /* ── the printed card keeps its own soft palette ────────────
+     (the hero is a marble-ivory card: antique gold line-work,
+     deep lapis ink and powder-blue script — constant, so the
+     card always prints true regardless of the site mood)   */
+  --card-cream:    #F7F4ED;
+  --card-cream-2:  #F0EDE3;
+  --card-gold:     #A98A4E;
+  --card-gold-soft:#C6AB7C;
+  --card-maroon:   #1E3A5F;
+  --card-rose:     #6E93BF;
+  --card-ink:      #2A3C55;
+  --card-ink-soft: #55677F;
+}
+
+/* ── one stage system for every scene ─────────────────────────── */
+.scene {
+  --scene-bg: var(--ivory);
+  --scene-bg-deep: var(--cream-deep);
+  --scene-ink: var(--ink);
+  --scene-ink-soft: var(--ink-soft);
+  --scene-accent: var(--burgundy);
+  --scene-accent-soft: color-mix(in srgb, var(--burgundy) 68%, transparent);
+  --scene-gold: var(--champagne-soft);
+}

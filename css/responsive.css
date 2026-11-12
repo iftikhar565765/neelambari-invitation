@@ -1,0 +1,90 @@
+/* ═══════════════════════════════════════════════════════════════
+   KALYANAM · responsive.css — the neelambari suite at every size
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 760px) {
+
+  /* the card's corners hug the smaller die-cut */
+  .korn--cascade-tl { left: -5%; width: 32%; }
+  .korn--cascade-tr { right: -5%; width: 32%; }
+  .korn--spray-tl { left: -7%; width: 23%; }
+  .korn--spray-tr { right: -7%; width: 23%; }
+  .korn--bell-tl { left: 15%; width: 14%; }
+  .korn--bell-tr { right: 15%; width: 14%; }
+  .korn--jasmine-l { left: 20%; width: 15%; }
+  .korn--jasmine-r { right: 20%; width: 15%; }
+  .korn--pavilion { left: -8%; width: 34%; }
+  .korn--drape { right: -6.5%; width: 25%; }
+  .korn--lotus-bl { width: 30%; }
+  .korn--lotus-br { width: 22%; }
+  .korn--spray-bl { width: 17%; left: -4.5%; }
+  .korn--spray-br { width: 17%; right: -4.5%; }
+  .korn--lamp-bl { width: 12%; }
+  .korn--lamp-br { width: 12%; }
+
+  .particulars-row { grid-template-columns: 1fr; }
+  .particular:nth-child(odd) { border-right: 0; }
+  .particular:nth-child(n + 2) { border-top: 1px solid var(--paper-line); }
+
+  .std-actions { flex-direction: column; align-items: center; }
+  .std-actions .btn { width: min(280px, 100%); justify-content: center; }
+
+  .count-unit { width: 92px; padding: 15px 6px 12px; }
+  .count-num { font-size: 2.1rem; }
+
+  .day-words { gap: 24px 26px; }
+
+  .opening__florals--tl,
+  .opening__florals--tr { width: clamp(8rem, 26vw, 12rem); }
+}
+
+@media (max-width: 430px) {
+
+  body { font-size: 16px; }
+
+  .kstage { padding-inline: 10px; }
+  .kstage__frame { inset: 6px; }
+  .kstage__frame::before,
+  .kstage__frame::after { width: 14px; height: 14px; }
+
+  .korn--cascade-tl { left: -4%; width: 36%; top: -1.8%; }
+  .korn--cascade-tr { right: -4%; width: 36%; top: -1.8%; }
+  .korn--bell-tl { left: 12%; }
+  .korn--bell-tr { right: 12%; }
+  .korn--pavilion { left: -9%; width: 38%; top: 31%; }
+  .korn--drape { right: -7%; width: 28%; top: 27%; }
+  .korn--lotus-bl { left: -5%; width: 33%; }
+  .korn--lotus-br { right: -2%; width: 24%; }
+  .korn--lamp-bl { left: 7%; width: 13%; }
+  .korn--lamp-br { right: 8%; width: 13%; }
+
+  .kcard__crown { padding: 9% 12% 0; }
+  .kcard__rect { padding-bottom: 10%; }
+
+  .hero-scroll__block { font-size: .54rem; }
+
+  .programme { gap: 30px; }
+  .programme-item { padding: 0 18px 20px; }
+  .programme-index { top: -18px; width: 36px; height: 36px; }
+  .programme-value { letter-spacing: .16em; }
+
+  .dresscode-lotus { width: 60px; top: -26px; left: -14px; }
+
+  .venue-stage { width: 92%; }
+  .venue-diya { right: -5%; width: 30%; }
+
+  .count-clock { gap: 12px; }
+  .count-unit { width: 74px; }
+  .count-num { font-size: 1.7rem; }
+
+  .day-words { column-gap: 22px; }
+
+  .closing-bloom { width: 116px; }
+
+  .opening__eyebrow { font-size: .6rem; }
+  .opening__florals--tl { width: 8rem; top: -2rem; left: -1.8rem; }
+  .opening__florals--tr { width: 8rem; top: -2rem; right: -1.8rem; }
+  .opening__florals--bl,
+  .opening__florals--br { width: 7.5rem; }
+  .opening__watermark { font-size: 11rem; }
+}

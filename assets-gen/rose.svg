@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="630" viewBox="0 0 200 210">
+
+  <defs>
+    <linearGradient id="gld" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2c78e"/>
+      <stop offset=".55" stop-color="#b28c4c"/>
+      <stop offset="1" stop-color="#8a6f3c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#f6dfa4" stop-opacity=".85"/>
+      <stop offset=".5" stop-color="#b28c4c" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#b28c4c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <style>
+    .f{ fill:url(#gld); fill-opacity:.24; stroke:url(#gld); stroke-width:1.4; stroke-linejoin:round; }
+    .s{ fill:none; stroke:url(#gld); stroke-width:2.0; stroke-linecap:round; stroke-linejoin:round; }
+    .s--thin{ stroke-width:1.05; opacity:.72; }
+    .dot{ fill:#f6dfa4; }
+    .halo{ fill:none; stroke:#f6dfa4; stroke-opacity:.4; stroke-width:1.1; }
+  </style>
+
+<path d="M108,69.64 C124.97,51.87 122.55,43.72 108,40 C93.45,43.72 91.03,51.87 108,69.64 Z" class="f"/><path d="M115.95,75.42 C138.1,86.06 145.1,81.25 144.14,66.26 C136.11,53.57 127.61,53.78 115.95,75.42 Z" class="f"/><path d="M112.91,84.76 C109.63,109.12 116.38,114.29 130.34,108.74 C139.92,97.18 137.09,89.17 112.91,84.76 Z" class="f"/><path d="M103.09,84.76 C78.91,89.17 76.08,97.18 85.66,108.74 C99.62,114.29 106.37,109.12 103.09,84.76 Z" class="f"/><path d="M100.05,75.42 C88.39,53.78 79.89,53.57 71.86,66.26 C70.9,81.25 77.9,86.06 100.05,75.42 Z" class="f"/><path d="M48,147.16 C57.83,136.87 56.42,132.15 48,130 C39.58,132.15 38.17,136.87 48,147.16 Z" class="f"/><path d="M52.6,150.5 C65.43,156.67 69.48,153.88 68.92,145.2 C64.27,137.86 59.35,137.98 52.6,150.5 Z" class="f"/><path d="M50.84,155.92 C48.94,170.02 52.85,173.01 60.93,169.8 C66.48,163.1 64.84,158.46 50.84,155.92 Z" class="f"/><path d="M45.16,155.92 C31.16,158.46 29.52,163.1 35.07,169.8 C43.15,173.01 47.06,170.02 45.16,155.92 Z" class="f"/><path d="M43.4,150.5 C36.65,137.98 31.73,137.86 27.08,145.2 C26.52,153.88 30.57,156.67 43.4,150.5 Z" class="f"/><path d="M164,128 Q172.72,126.01 170.1,116.52 Q160.78,119.66 164,128 Z" class="f"/><path d="M96,164 Q84.29,151.57 69.59,158.39 Q80.25,170.59 96,164 Z" class="f"/><path d="M126,154 Q141.79,154.74 147.2,140.75 Q132.26,139.48 126,154 Z" class="f"/><path d="M70,182 Q57.24,175.02 47.13,184.4 Q58.97,191.48 70,182 Z" class="f"/><path d="M150,178 Q163.93,182.18 171.87,170.89 Q158.82,166.43 150,178 Z" class="f"/><path d="M90,196 Q83.05,185.43 71.46,188.51 Q77.66,198.78 90,196 Z" class="f"/><path d="M132,192 Q143.1,198.07 151.89,189.91 Q141.59,183.75 132,192 Z" class="f"/><path d="M106,44 Q111.2,39.5 106,34 Q100.8,39.5 106,44 Z" class="f"/><path d="M111.77,64.85 Q121.17,58.47 127.01,58.32" class="s"/><path d="M121.67,77.52 Q130.65,84.49 132.59,89.99" class="s"/><path d="M112.68,90.85 Q108.82,101.55 104.19,105.09" class="s"/><path d="M97.22,86.42 Q85.86,86.06 81.06,82.75" class="s"/><path d="M96.66,70.35 Q93.5,59.43 95.16,53.84" class="s"/><path d="M109.33,75.7 L111.23,72.41" class="s"/><path d="M110.66,78 L114.46,78" class="s"/><path d="M109.33,80.3 L111.23,83.59" class="s"/><path d="M106.67,80.3 L104.77,83.59" class="s"/><path d="M105.34,78 L101.54,78" class="s"/><path d="M106.67,75.7 L104.77,72.41" class="s"/><path d="M48.77,150.67 L49.87,148.76" class="s"/><path d="M49.54,152 L51.74,152" class="s"/><path d="M48.77,153.33 L49.87,155.24" class="s"/><path d="M47.23,153.33 L46.13,155.24" class="s"/><path d="M46.46,152 L44.26,152" class="s"/><path d="M47.23,150.67 L46.13,148.76" class="s"/><path d="M108,116 Q98,150 80,186" class="s"/><path d="M48,174 Q56,190 74,198" class="s"/><path d="M164,141 Q154,168 138,192" class="s"/><path d="M96,164 L75.56,159.66" class="s"/><path d="M126,154 L142.41,143.75" class="s"/><path d="M70,182 L52.3,183.86" class="s"/><path d="M150,178 L166.93,172.5" class="s"/><path d="M90,196 L75.65,190.2" class="s"/><path d="M132,192 L147.4,190.38" class="s"/><circle cx="178" cy="54" r="1.9" class="dot"/><circle cx="178" cy="54" r="4.56" class="halo"/><circle cx="34" cy="86" r="1.5" class="dot"/><circle cx="34" cy="86" r="3.6" class="halo"/><circle cx="186" cy="194" r="1.7" class="dot"/><circle cx="186" cy="194" r="4.08" class="halo"/>
+</svg>

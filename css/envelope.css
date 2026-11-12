@@ -1,0 +1,532 @@
+/* ═══════════════════════════════════════════════════════════════
+   KALYANAM · envelope.css — the opening cover
+   ---------------------------------------------------------------
+   A neelambari powder-blue silk envelope sealed in gold,
+   resting in a lapis night: blossoms hanging at the corners of
+   the sky, a candle glow, a giant script watermark. The letter
+   sleeps inside the silk; touch the gold medallion and the wax
+   gives way, the flap lifts, and the letter rises to its guest.
+   ═══════════════════════════════════════════════════════════════ */
+
+.opening {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(4.5rem, 10vh, 7rem) var(--pad-gutter);
+  overflow: clip;
+  background:
+    radial-gradient(52rem 34rem at 50% 118%, color-mix(in srgb, var(--crimson) 11%, transparent), transparent 68%),
+    radial-gradient(42rem 28rem at 50% -12rem, color-mix(in srgb, var(--champagne) 8%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 54%, var(--sky-1) 100%);
+}
+
+/* a whisper of jali lattice on the night */
+.opening::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='68'%3E%3Cg fill='none' stroke='%23C9A260' stroke-opacity='.05'%3E%3Cpath d='M34 6 L62 34 L34 62 L6 34 Z'/%3E%3Ccircle cx='34' cy='34' r='2.4'/%3E%3Cpath d='M34 26 L42 34 L34 42 L26 34 Z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.opening.is-leaving {
+  animation: opening-leave 1s ease forwards;
+}
+@keyframes opening-leave {
+  to { opacity: 0; }
+}
+
+/* ── distant blossoms, cropped by the sky's edge ─────────────── */
+
+.opening__blossoms { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+
+.opening__florals {
+  position: absolute;
+  width: clamp(10rem, 22vw, 17rem);
+  opacity: .85;
+  pointer-events: none;
+  user-select: none;
+}
+.opening__florals--tl { top: -2.6rem; left: -2.4rem; transform: rotate(7deg); }
+.opening__florals--tr { top: -2.6rem; right: -2.4rem; transform: scaleX(-1) rotate(7deg); }
+.opening__florals--bl { bottom: -1.8rem; left: -1.8rem; transform: rotate(9deg); opacity: .7; }
+.opening__florals--br { bottom: -1.8rem; right: -1.8rem; transform: scaleX(-1) rotate(9deg); opacity: .7; }
+
+/* ── floating embers of gold dust ────────────────────────────── */
+
+.opening__mote {
+  position: absolute;
+  z-index: 1;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--candle) 85%, white 15%) 0%, transparent 72%);
+  opacity: var(--o);
+  animation: mote-drift var(--t) ease-in-out var(--d) infinite alternate;
+  pointer-events: none;
+}
+@keyframes mote-drift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-30px); }
+}
+
+/* ── candle glow + the script watermark ──────────────────────── */
+
+.opening__glow {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 15%;
+  width: 36rem;
+  height: 22rem;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--candle) 15%, transparent), transparent 72%);
+  filter: blur(6px);
+  animation: glow-breathe 6s var(--ease-soft) infinite alternate;
+  pointer-events: none;
+}
+@keyframes glow-breathe {
+  from { opacity: .72; }
+  to   { opacity: 1; }
+}
+
+.opening__watermark {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-script);
+  font-size: clamp(13rem, 38vw, 28rem);
+  line-height: 1;
+  white-space: nowrap;
+  color: color-mix(in srgb, var(--champagne) 6%, transparent);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── the centred column ──────────────────────────────────────── */
+
+.opening__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.opening__eyebrow {
+  max-width: 44ch;
+  margin-bottom: 1.3rem;
+  font-family: var(--font-caps);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  font-size: .64rem;
+  line-height: 2.1;
+  color: var(--night-faint);
+}
+
+.opening__names {
+  margin-bottom: clamp(2.2rem, 5vh, 3.2rem);
+  font-size: clamp(2.8rem, 8.5vw, 4.9rem);
+  line-height: 1.15;
+  color: var(--rose);
+  text-shadow: 0 2px 34px color-mix(in srgb, var(--crimson) 35%, transparent);
+}
+
+/* ── the stage ───────────────────────────────────────────────── */
+
+.envelope-stage {
+  position: relative;
+  width: min(86vw, 30rem);
+  aspect-ratio: 10 / 7;
+  display: grid;
+  place-items: center;
+  margin-bottom: clamp(2.2rem, 5vh, 3.2rem);
+}
+
+/* a golden toran-lace doily resting behind the envelope */
+.envelope-lace {
+  position: absolute;
+  width: 132%;
+  aspect-ratio: 1;
+  opacity: .3;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 2px 6px rgba(201, 162, 96, .12));
+}
+
+.envelope-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: -7%;
+  width: 80%;
+  height: 36px;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(6, 12, 24, .78), transparent 70%);
+  filter: blur(7px);
+}
+
+.envelope {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1100px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+}
+.envelope:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 10px;
+}
+
+/* the "it's waiting" tell — one quiet breath */
+.envelope:not(.is-open) { animation: envelope-breathe 6s var(--ease-soft) infinite alternate; }
+@keyframes envelope-breathe {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-7px); }
+}
+
+/* ── back panel — midnight lapis silk ──────────────────────────────────── */
+
+.envelope__back {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 6px;
+  background: linear-gradient(172deg,
+    color-mix(in srgb, var(--wine) 90%, var(--crimson) 10%) 0%,
+    color-mix(in srgb, var(--night) 86%, var(--wine) 14%) 100%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne) 16%, transparent),
+    inset 0 -16px 34px rgba(6, 12, 24, .5);
+}
+
+/* ── the letter asleep inside ────────────────────────────────── */
+
+.envelope__letter {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  height: 92%;
+  z-index: 1;
+  transform: translateY(4%);
+  transform-origin: 50% 100%;
+  will-change: transform;
+}
+
+.envelope__letter-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 1.2rem;
+  text-align: center;
+  background: linear-gradient(168deg,
+    color-mix(in srgb, var(--paper-raised) 98%, white) 0%,
+    color-mix(in srgb, var(--ivory) 88%, var(--parchment)) 100%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne-soft) 52%, transparent),
+    inset 0 0 0 5px var(--paper-raised),
+    inset 0 0 0 6px color-mix(in srgb, var(--champagne-soft) 40%, transparent);
+}
+
+.envelope__letter-mono {
+  font-size: clamp(1.35rem, 4.4vw, 1.9rem);
+  color: var(--burgundy);
+  line-height: 1.1;
+}
+
+.envelope__letter-names {
+  font-family: var(--font-editorial);
+  font-weight: 500;
+  font-size: clamp(1.15rem, 3.6vw, 1.6rem);
+  letter-spacing: .06em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.envelope__letter-sprig {
+  width: 7.4rem;
+  height: auto;
+  margin-block: .2rem;
+}
+
+.envelope__letter-date {
+  font-family: var(--font-caps);
+  font-weight: 400;
+  font-size: clamp(.56rem, 1.7vw, .68rem);
+  letter-spacing: .32em;
+  text-indent: .32em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ── the front pocket — neelambari silk ───────────────────────────── */
+
+.envelope__pocket {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  clip-path: polygon(0 0, 50% 46%, 100% 0, 100% 100%, 0 100%);
+  filter: drop-shadow(0 4px 8px rgba(6, 12, 24, .3));
+}
+
+.envelope__pocket-face {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--rose) 74%, white 26%) 0%,
+    var(--rose) 44%,
+    color-mix(in srgb, var(--rose) 72%, var(--crimson) 28%) 100%);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--champagne) 34%, transparent);
+}
+
+.envelope__pocket-face::after {
+  /* side shading + bottom depth + a silk sheen at the top edge */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, rgba(6, 12, 24, .16) 0 3%, transparent 14% 86%, rgba(6, 12, 24, .16) 97% 100%),
+    linear-gradient(0deg, rgba(6, 12, 24, .22), transparent 26%),
+    linear-gradient(178deg, rgba(255, 251, 250, .35), transparent 20%);
+}
+
+/* address plate — a fine ivory card on the silk pocket */
+.envelope__address {
+  position: absolute;
+  left: 50%;
+  top: 64%;
+  transform: translateX(-50%);
+  width: 74%;
+  padding: .8rem .6rem .95rem;
+  text-align: center;
+  background: linear-gradient(172deg,
+    color-mix(in srgb, var(--paper-raised) 96%, transparent),
+    color-mix(in srgb, var(--parchment) 92%, transparent));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--champagne-soft) 62%, transparent),
+    inset 0 0 0 3px var(--paper-raised),
+    inset 0 0 0 4px color-mix(in srgb, var(--champagne-soft) 42%, transparent),
+    0 2px 6px rgba(6, 12, 24, .25);
+}
+
+.envelope__to {
+  display: block;
+  font-family: var(--font-caps);
+  font-weight: 400;
+  font-size: clamp(.52rem, 1.6vw, .62rem);
+  letter-spacing: .3em;
+  text-indent: .3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.envelope__address .script {
+  font-size: clamp(1.2rem, 4vw, 1.7rem);
+  color: var(--burgundy);
+  line-height: 1.05;
+  margin-top: .18rem;
+}
+
+/* ── the flap — folded silk, gold-ruled ──────────────────────── */
+
+.envelope__flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48%;
+  z-index: 4;
+  transform-origin: 50% 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.envelope__flap-face,
+.envelope__flap-liner {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.envelope__flap-face {
+  background: linear-gradient(184deg,
+    color-mix(in srgb, var(--rose) 78%, white 22%) 0%,
+    color-mix(in srgb, var(--rose) 60%, var(--crimson) 40%) 46%,
+    color-mix(in srgb, var(--wine) 82%, var(--crimson) 18%) 100%);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--champagne) 30%, transparent);
+  filter: drop-shadow(0 3px 4px rgba(6, 12, 24, .35));
+}
+
+.envelope__flap-face::after {
+  /* crease lines from the corners down to the tip */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom right, transparent calc(50% - 1px), color-mix(in srgb, var(--champagne) 30%, transparent) 50%, transparent calc(50% + 1px)),
+    linear-gradient(to bottom left, transparent calc(50% - 1px), rgba(6, 12, 24, .18) 50%, transparent calc(50% + 1px));
+}
+
+.envelope__flap-liner {
+  transform: rotateX(180deg);
+  background:
+    radial-gradient(130% 110% at 50% 0%, rgba(255, 251, 250, .55), transparent 60%),
+    repeating-linear-gradient(45deg, color-mix(in srgb, var(--champagne) 34%, transparent) 0 1px, transparent 1px 9px),
+    linear-gradient(184deg,
+      color-mix(in srgb, var(--parchment) 88%, var(--champagne) 12%) 0%,
+      color-mix(in srgb, var(--parchment) 76%, var(--champagne) 24%) 100%);
+}
+
+/* ── postage stamp — a lotus in gold on parchment ────────────── */
+
+.envelope__stamps {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 6;
+  pointer-events: none;
+}
+.envelope__stamps .stamp {
+  width: clamp(2.9rem, 8.5vw, 3.5rem);
+  height: auto;
+  transform: rotate(4deg);
+  filter: drop-shadow(0 2px 5px rgba(6, 12, 24, .35));
+}
+
+/* ── the gold medallion seal ─────────────────────────────────── */
+
+.envelope__seal-wrap {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  z-index: 7;
+  transform: translate(-50%, -50%) rotate(-3deg);
+  display: grid;
+  place-items: center;
+  width: clamp(4.2rem, 12.5vw, 5.3rem);
+  aspect-ratio: 1;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.envelope__seal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(6, 12, 24, .55));
+}
+
+.envelope__seal {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding-bottom: .12em;
+  font-size: clamp(1.2rem, 3.4vw, 1.5rem);
+  letter-spacing: .04em;
+  color: color-mix(in srgb, var(--wine) 88%, black 12%);
+  text-shadow:
+    0 1px 0 rgba(255, 248, 224, .5),
+    0 -1px 0 rgba(94, 62, 8, .35);
+}
+
+.envelope:active .envelope__seal-wrap {
+  transform: translate(-50%, -50%) rotate(-3deg) scale(.95);
+}
+
+/* ── hint, open button, skip ─────────────────────────────────── */
+
+.opening__hint {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.7rem;
+  font-family: var(--font-caps);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  font-size: .6rem;
+  color: var(--night-faint);
+}
+.opening__hint-rule {
+  width: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-line) 30%, var(--gold-line) 70%, transparent);
+}
+
+.opening__open { min-width: min(280px, 82vw); }
+
+.opening__skip {
+  margin-top: 1.15rem;
+  padding-bottom: 2px;
+  font-family: var(--font-caps);
+  font-weight: 300;
+  font-size: .66rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--night-faint);
+  border-bottom: 1px solid transparent;
+  transition: color .25s ease, border-color .25s ease;
+}
+.opening__skip:hover {
+  color: var(--moonlit);
+  border-color: var(--gold-line);
+}
+
+/* ── opening-state hooks (driven by JS) ──────────────────────── */
+
+.envelope.is-open { animation: none; }
+
+/* ── CSS-keyframes fallback (no GSAP) ────────────────────────── */
+
+.envelope.is-fallback-open .envelope__seal-wrap {
+  animation: seal-break .7s var(--ease-soft) forwards;
+}
+@keyframes seal-break {
+  40%  { transform: translate(-50%, -50%) rotate(9deg) scale(1.06); opacity: 1; }
+  100% { transform: translate(-50%, -40%) rotate(17deg) scale(.9); opacity: 0; }
+}
+
+.envelope.is-fallback-open .envelope__flap {
+  animation: flap-open 1.3s var(--ease-soft) .55s forwards;
+}
+@keyframes flap-open {
+  0%   { transform: rotateX(0); z-index: 4; }
+  84%  { transform: rotateX(-88deg); z-index: 4; }
+  85%  { transform: rotateX(-90deg); z-index: 0; }
+  100% { transform: rotateX(-105deg); z-index: 0; }
+}
+
+.envelope.is-fallback-open .envelope__letter {
+  animation: letter-rise 1.9s var(--ease-soft) 1.55s forwards;
+}
+@keyframes letter-rise {
+  0%   { transform: translateY(4%); }
+  55%  { transform: translateY(-62%); }
+  100% { transform: translateY(-58%) scale(1.9); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .envelope:not(.is-open) { animation: none; }
+  .opening__mote, .opening__glow { animation: none; }
+}
